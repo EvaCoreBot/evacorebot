@@ -16,7 +16,8 @@ Here are some ideas to get you started:
 -->
 ### Bitrix24 GPT Bot
 
-Файл `bitrix_bot.py` содержит обработчик webhook для облачной версии Bitrix24.
+Файл `api/bitrix.py` содержит обработчик webhook для облачной версии Bitrix24.
+Функция размещена в каталоге `api` для деплоя на Vercel.
 Он принимает входящие события, отправляет текст запроса в OpenAI и
 отправляет ответ обратно в чат Bitrix24.
 
