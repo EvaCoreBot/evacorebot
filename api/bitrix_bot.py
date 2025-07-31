@@ -3,7 +3,7 @@ import json
 import openai
 import requests
 
-BITRIX_WEBHOOK = os.getenv("BITRIX_WEBHOOK")
+BITRIX_WEBHOOK = os.getenv("BITRIX_WEBHOOK_URL")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 

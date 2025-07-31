@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: evacorebot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 eva_bot.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: BITRIX_WEBHOOK_URL
+        sync: false
+      - key: ALLOWED_TELEGRAM_IDS
+        sync: false
+      - key: BITRIX_FOLDER_ID
+        sync: false
+      - key: BITRIX_TASK_RESPONSIBLE_ID
+        sync: false

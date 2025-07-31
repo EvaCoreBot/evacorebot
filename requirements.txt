@@ -6,3 +6,4 @@ python-docx
 python-dotenv
 pandas
 openpyxl
+requests
