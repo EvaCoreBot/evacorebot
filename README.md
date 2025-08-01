@@ -23,7 +23,6 @@ Here are some ideas to get you started:
 Переменные окружения:
 
 - `BITRIX_WEBHOOK` – адрес webhook, например
-  `https://tdroks.bitrix24.ru/rest/1/2bcd7uxhgphx8v14`
 - `OPENAI_API_KEY` – ключ доступа к OpenAI.
 
 Запускайте функцию в совместимом сервере (Flask/Vercel/AWS Lambda),
