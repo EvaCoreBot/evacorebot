@@ -9,7 +9,7 @@ async def start(update, context):
 
 def handler(request):
     from telegram.ext import ApplicationBuilder, CommandHandler
-    app = AplicationBuilder().token("TOKEN_PLACEHOLDER").build()
+    app = ApplicationBuilder().token("TOKEN_PLACEHOLDER").build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("doc", handle_doc))
     app.add_handler(CommandHandler("risk", handle_risk))
