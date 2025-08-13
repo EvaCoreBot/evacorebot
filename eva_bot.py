@@ -17,7 +17,6 @@ def main() -> None:
     token = os.getenv("TELEGRAM_TOKEN", "").strip()
     if not token:
         raise RuntimeError("TELEGRAM_TOKEN is not set")
-    token = os.getenv("TELEGRAM_TOKEN", "PLACEHOLDER_TOKEN")
     app = ApplicationBuilder().token(token).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("doc", handle_doc))
