@@ -16,7 +16,15 @@ async def start(update, context):
 def main() -> None:
     token = os.getenv("TELEGRAM_TOKEN")
     if not token:
-        raise RuntimeError("TELEGRAM_TOKEN is not set")
+        raise RuntimeError(
+            "TELEGRAM_TOKEN environment variable is not set.\n"
+            "Please set the TELEGRAM_TOKEN environment variable with your bot's token.\n"
+            "You can obtain a token by creating a bot with BotFather on Telegram.\n"
+            "Example (Linux/macOS):\n"
+            "  export TELEGRAM_TOKEN=your-telegram-bot-token\n"
+            "Example (Windows CMD):\n"
+            "  set TELEGRAM_TOKEN=your-telegram-bot-token"
+        )
 
     app = ApplicationBuilder().token(token).build()
     app.add_handler(CommandHandler("start", start))
