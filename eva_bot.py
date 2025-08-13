@@ -14,7 +14,7 @@ async def start(update, context):
 
 
 def main() -> None:
-    token = os.getenv("TELEGRAM_TOKEN")
+    token = os.getenv("TELEGRAM_TOKEN", "").strip()
     if not token:
         raise RuntimeError("TELEGRAM_TOKEN is not set")
 
