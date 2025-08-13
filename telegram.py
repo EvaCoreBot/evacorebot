@@ -5,7 +5,7 @@ from review_handler import handle_review
 from prompt_handler import handle_prompt
 
 async def start(update, context):
-    await update.message.reply_text("Eva.крист подключена. Команды: /doc /risk /review /prompt")
+    await update.message.reply_text("Eva.Юрист подключена. Команды: /doc /risk /review /prompt")
 
 def handler(request):
     from telegram.ext import ApplicationBuilder, CommandHandler
