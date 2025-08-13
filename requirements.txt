@@ -1,0 +1,8 @@
+python-telegram-bot==20.7
+openai
+google-generativeai
+flask
+python-docx
+python-dotenv
+pandas
+openpyxl
