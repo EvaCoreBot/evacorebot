@@ -4,7 +4,10 @@ from telegram.ext import ApplicationBuilder, CommandHandler
 from doc_handler import handle_doc
 from risk_handler import handle_risk
 from review_handler import handle_review
-from prompt_handler import handle_prompt
+from modules.doc_handler import handle_doc
+from modules.risk_handler import handle_risk
+from modules.review_handler import handle_review
+from modules.prompt_handler import handle_prompt
 
 async def start(update, context):
     await update.message.reply_text("Eva.Юрист подключена. Команды: /doc /risk /review /prompt")
