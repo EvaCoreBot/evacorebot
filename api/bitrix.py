@@ -33,7 +33,7 @@ def handler(request):
         return {"statusCode": 200, "body": "No message"}
 
     openai.api_key = OPENAI_API_KEY
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": message}],
     )
