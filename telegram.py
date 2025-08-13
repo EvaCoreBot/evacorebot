@@ -11,7 +11,9 @@ async def start(update, context):
 
 def handler(request):
     from telegram.ext import Application
-    token = os.getenv("TELEGRAM_TOKEN", "TOKEN_PLACEHOLDER")
+    token = os.getenv("TELEGRAM_TOKEN")
+    if not token:
+        raise RuntimeError("TELEGRAM_TOKEN environment variable is not set.")
     app = ApplicationBuilder().token(token).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("doc", handle_doc))
