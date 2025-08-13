@@ -37,7 +37,14 @@ def handler(request):
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": message}],
     )
-    answer = response.choices[0].message.content
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": message}],
+        )
+        answer = response.choices[0].message.content
+    except Exception as e:
+        return {"statusCode": 502, "body": f"OpenAI API error: {str(e)}"}
 
     requests.post(
         f"{BITRIX_WEBHOOK}/imbot.message.add.json",
