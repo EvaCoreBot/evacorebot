@@ -6,7 +6,6 @@ from risk_handler import handle_risk
 from review_handler import handle_review
 from modules.doc_handler import handle_doc
 from modules.risk_handler import handle_risk
-from modules.review_handler import handle_review
 from modules.prompt_handler import handle_prompt
 
 async def start(update, context):
