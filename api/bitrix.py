@@ -13,7 +13,16 @@ def handler(request):
         return {"statusCode": 500, "body": "Missing configuration"}
 
     try:
-        event = request.get_json() if hasattr(request, 'get_json') else json.loads(request["body"])
+        if hasattr(request, 'get_json'):
+            event = request.get_json()
+        elif isinstance(request, dict):
+            body = request.get("body")
+            if body is not None:
+                event = json.loads(body)
+            else:
+                event = request
+        else:
+            raise ValueError("Unsupported request format")
     except Exception:
         return {"statusCode": 400, "body": "Invalid request"}
 
