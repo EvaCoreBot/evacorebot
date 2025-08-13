@@ -42,7 +42,14 @@ def handler(request):
     requests.post(
         f"{BITRIX_WEBHOOK}/imbot.message.add.json",
         json={"DIALOG_ID": dialog_id, "MESSAGE": answer},
-    )
+    try:
+        resp = requests.post(
+            f"{BITRIX_WEBHOOK}/imbot.message.add.json",
+            json={"DIALOG_ID": dialog_id, "MESSAGE": answer},
+        )
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        return {"statusCode": 502, "body": f"Failed to send message to Bitrix24: {str(e)}"}
 
     return {"statusCode": 200, "body": "ok"}
 
